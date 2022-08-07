@@ -2,11 +2,13 @@ namespace Pongue
 {
     public partial class Form1 : Form
     {
-        private int ballMoveX = 8;
-        private int ballMoveY = 8;
+        private int ballMoveX = 5;
+        private int ballMoveY = 5;
 
         int pointL = 0;
         int pointR = 0;
+        
+        bool isBotted = false;
         public Form1()
         {
             InitializeComponent();
@@ -27,21 +29,25 @@ namespace Pongue
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {
-            int lY = paddleL.Location.Y;
-            int lX = paddleL.Location.X;
-            int rY = paddleR.Location.Y;
-            int rX = paddleR.Location.X;
 
-            if (e.KeyCode == Keys.Up) rY -= 25;
-            else if (e.KeyCode == Keys.Down) rY += 25;
-            else if (e.KeyCode == Keys.W) lY -= 25;
-            else if (e.KeyCode == Keys.S) lY += 25;
-            else if (e.KeyCode == Keys.M)
+           int lY = paddleL.Location.Y;
+           int lX = paddleL.Location.X;
+           int rY = paddleR.Location.Y;
+           int rX = paddleR.Location.X;
+
+           if (e.KeyCode == Keys.B)
             {
-                ballMoveX = -ballMoveX;
-                ballMoveY = -ballMoveY;
+                if (isBotted == true) isBotted = false;
+                else isBotted = true;
             }
 
+            if (isBotted == false)
+            {
+                if (e.KeyCode == Keys.W) lY -= 35;
+                else if (e.KeyCode == Keys.S) lY += 35;
+            }
+            if (e.KeyCode == Keys.Up) rY -= 35;
+            else if (e.KeyCode == Keys.Down) rY += 35;
             paddleL.Location = new Point(lX, lY);
             paddleR.Location = new Point(rX, rY);
 
@@ -51,6 +57,7 @@ namespace Pongue
         {
             int ballPosX = ball.Location.X;
             int ballPosY = ball.Location.Y;
+            int x = paddleL.Location.X;
             int ballWidth = 40;
             int ballHeight = 40;
 
@@ -83,6 +90,10 @@ namespace Pongue
             ballPosY += ballMoveY;
 
             ball.Location = new Point(ballPosX, ballPosY);
+            if (isBotted)
+            {
+                paddleL.Location = new Point(x, ballPosY);
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
