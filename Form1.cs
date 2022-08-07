@@ -90,12 +90,12 @@ namespace Pongue
             ballPosY += ballMoveY;
 
             ball.Location = new Point(ballPosX, ballPosY);
+            botBool.Text = Convert.ToString(isBotted);
             if (isBotted)
             {
                 paddleL.Location = new Point(x, ballPosY);
             }
         }
-
         private void label1_Click(object sender, EventArgs e)
         {
 

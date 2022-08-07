@@ -42,6 +42,9 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.botBool = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.paddleL)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.paddleR)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ball)).BeginInit();
@@ -75,7 +78,7 @@
             // ball
             // 
             this.ball.BackColor = System.Drawing.Color.Red;
-            this.ball.Location = new System.Drawing.Point(509, 374);
+            this.ball.Location = new System.Drawing.Point(928, 475);
             this.ball.Name = "ball";
             this.ball.Size = new System.Drawing.Size(20, 20);
             this.ball.TabIndex = 2;
@@ -87,9 +90,9 @@
             this.scoreL.BackColor = System.Drawing.Color.Transparent;
             this.scoreL.Font = new System.Drawing.Font("Segoe UI", 26.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.scoreL.ForeColor = System.Drawing.Color.White;
-            this.scoreL.Location = new System.Drawing.Point(836, 24);
+            this.scoreL.Location = new System.Drawing.Point(957, 42);
             this.scoreL.Name = "scoreL";
-            this.scoreL.Size = new System.Drawing.Size(68, 82);
+            this.scoreL.Size = new System.Drawing.Size(68, 84);
             this.scoreL.TabIndex = 3;
             this.scoreL.Text = "0";
             // 
@@ -99,7 +102,7 @@
             this.scoreR.BackColor = System.Drawing.Color.Transparent;
             this.scoreR.Font = new System.Drawing.Font("Segoe UI", 26F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.scoreR.ForeColor = System.Drawing.Color.White;
-            this.scoreR.Location = new System.Drawing.Point(987, 24);
+            this.scoreR.Location = new System.Drawing.Point(855, 44);
             this.scoreR.Name = "scoreR";
             this.scoreR.Size = new System.Drawing.Size(68, 82);
             this.scoreR.TabIndex = 4;
@@ -189,10 +192,49 @@
             this.pictureBox7.TabIndex = 11;
             this.pictureBox7.TabStop = false;
             // 
+            // botBool
+            // 
+            this.botBool.AutoSize = true;
+            this.botBool.BackColor = System.Drawing.Color.Black;
+            this.botBool.Font = new System.Drawing.Font("Segoe UI", 20.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.botBool.ForeColor = System.Drawing.Color.White;
+            this.botBool.Location = new System.Drawing.Point(250, 9);
+            this.botBool.Name = "botBool";
+            this.botBool.Size = new System.Drawing.Size(196, 65);
+            this.botBool.TabIndex = 12;
+            this.botBool.Text = "botBool";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Black;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 20.14286F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(247, 65);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Bot Mode:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(12, 937);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(218, 30);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Press \'B\' for Bot Mode";
+            // 
             // Form1
             // 
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(1829, 976);
+            this.Controls.Add(this.ball);
+            this.Controls.Add(this.paddleL);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.botBool);
             this.Controls.Add(this.pictureBox7);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
@@ -202,9 +244,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.scoreR);
             this.Controls.Add(this.scoreL);
-            this.Controls.Add(this.ball);
             this.Controls.Add(this.paddleR);
-            this.Controls.Add(this.paddleL);
             this.Name = "Form1";
             this.Text = "Pongue";
             ((System.ComponentModel.ISupportInitialize)(this.paddleL)).EndInit();
@@ -238,5 +278,8 @@
         private PictureBox pictureBox5;
         private PictureBox pictureBox6;
         private PictureBox pictureBox7;
+        private Label botBool;
+        private Label label1;
+        private Label label2;
     }
 }
